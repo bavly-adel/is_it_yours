@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/action_search_btn"
+        android:icon="@drawable/ic_action_name"
+        android:title="Search"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_info_btn"
+        android:title="Acc. Info" />
+    <item
+        android:id="@+id/action_logout_btn"
+        android:title="Log out" />
 </menu>

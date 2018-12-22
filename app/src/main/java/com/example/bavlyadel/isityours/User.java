@@ -1,29 +1,29 @@
 package com.example.bavlyadel.isityours;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * Created by bavlyadel on 12/22/18.
  */
 
-public class UserClass {
+public class User {
     private String id;
     private String name;
-    private String email;
     private String phone;
+    private String email;
     private String password;
 
 
-    DatabaseReference userData;
 
 
 
-    public UserClass(String name, String email, String phone, String password) {
+
+    public User(String id,String name, String phone, String email,  String password) {
+        this.id=id;
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.password = password;
+
     }
 
     public String getId() {
@@ -47,11 +47,8 @@ public class UserClass {
     }
 
 
-    public void create(){
-        userData = FirebaseDatabase.getInstance().getReference("Users");
-        this.id=userData.push().getKey();
-        userData.setValue(this);
-    }
+
+
 
 
 

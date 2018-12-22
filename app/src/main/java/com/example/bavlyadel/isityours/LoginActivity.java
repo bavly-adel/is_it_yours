@@ -47,10 +47,12 @@ public class LoginActivity extends AppCompatActivity {
         String email = emailTxt.getText().toString();
         String pass = passTxt.getText().toString();
 
-        if (!TextUtils.isEmpty(email) && !TextUtils.isEmpty(pass)){
+        User user = new User("","","",email,pass);
+
+        if (!TextUtils.isEmpty(user.getEmail()) && !TextUtils.isEmpty(user.getPassword())){
             loginprogress.setVisibility(View.VISIBLE);
 
-            mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(user.getEmail(),user.getPassword()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
 

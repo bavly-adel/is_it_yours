@@ -17,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
 
     private android.support.v7.widget.Toolbar mainToolbar;
 
+    private String currentUserID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +46,14 @@ public class MainActivity extends AppCompatActivity {
             sendToLogin();
 
         }
+        else{
 
-        super.onStart();
+            currentUserID = currentUser.getUid();
+            super.onStart();
+
+
+        }
+
     }
 
 
